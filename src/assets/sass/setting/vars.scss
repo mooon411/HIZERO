@@ -1,0 +1,46 @@
+:root {
+    --mainfont-nanum: "nanumSquareNeo";
+    --mainfont-nexon: "nexonLv1";
+    --mainfont-point: 'JGaegujaengyi-Medium-KO';
+    --font-koen: 'SOGANGUNIVERSITYTTF';
+
+    --mainColor: #d00c0c;
+    --subColor: #fafafa;
+  
+    --black: #000;
+    --black100: #161616;
+    --black200: #222;
+    --black300: #333;
+    --black400: #444;
+    --black500: #555;
+    
+    --white: #fff;
+    --white100: #efefef;
+    --white200: #e4e4e4;
+    --white300: #d9d9d9;
+    --white400: #afafaf;
+    --white500: #707070;
+
+    --red: #d00c0c;
+
+    // 폰트 셋팅
+    font-family: var(--mainfont-nanum), var(--mainfont-nexon);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    
+    // 폰트 최적화
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  
+    @media (max-width: 850px) {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    @media (max-width: 550px) {
+        font-size: 12.5px;
+    }
+}

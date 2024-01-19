@@ -1,0 +1,61 @@
+body {
+    background-color: var(--white);
+    color: var(--black200);
+}
+
+main {
+    // min-height: 100vh;
+    padding-top: 5rem;
+}
+
+.show {
+    opacity: 1;
+    transition: all 0.4s ease;
+}
+.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+
+.blind {
+    display: none;
+}
+
+
+// 섹션 로딩 소스
+.isLoading {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.isLoaded {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+
+// 버튼 스타일
+.btn_style {
+    width: 100%;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1.3rem;
+    text-align: center;
+    font-size: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 5px;
+    transition: 0.4s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--black400);
+    }
+}
+
+
+@mixin ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

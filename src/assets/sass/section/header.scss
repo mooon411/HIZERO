@@ -1,0 +1,334 @@
+#header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: var(--white);
+    color: var(--black200);
+    border-bottom: 1px solid var(--black);
+
+    > ul {
+        display: grid;
+        grid-template-columns: 25% auto 25%;
+        height: 100%;
+    
+        > li{
+            position: relative;
+            border-right: 1px solid #000;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        
+            &:last-child{
+                border-right: 0;
+            }
+
+            // 로고
+            a {
+                display: block;
+
+                img {
+                    width: 100%;
+                    max-width: 130px;
+                }
+            }
+        }
+        
+    }
+     // nav
+     nav {
+        position: fixed;
+        width: 25%;
+        height: calc(100% - 5rem);
+        top: 5rem;
+        background: var(--white);
+        border-right: 1px solid var(--black);
+        padding: 3% 0;
+
+        .navMenu {
+            li {
+                margin: 1rem;
+                a {
+                    position: relative;
+                    width: 100%;
+                    padding: 5%;
+                    font-weight: 800;
+                    font-size: 1.2rem;
+                    transition: 0.2s ease-in-out;
+                    text-transform: uppercase;
+                }
+            }
+            @keyframes shake {
+                0% {
+                    -ms-transform: translate(0,0) rotateZ(0);
+                    -webkit-transform: translate(0,0) rotateZ(0);
+                    transform: translate(0,0) rotateZ(0)
+                }
+            
+                25% {
+                    -ms-transform: translate(2px,2px) rotateZ(1deg);
+                    -webkit-transform: translate(2px,2px) rotateZ(1deg);
+                    transform: translate(2px,2px) rotateZ(1deg)
+                }
+            
+                50% {
+                    -ms-transform: translate(0,2px) rotateZ(0);
+                    -webkit-transform: translate(0,2px) rotateZ(0);
+                    transform: translate(0,2px) rotateZ(0)
+                }
+            
+                75% {
+                    -ms-transform: translate(2px,0) rotateZ(-1deg);
+                    -webkit-transform: translate(2px,0) rotateZ(-1deg);
+                    transform: translate(2px,0) rotateZ(-1deg)
+                }
+            
+                100% {
+                    -ms-transform: translate(0,0) rotateZ(0);
+                    -webkit-transform: translate(0,0) rotateZ(0);
+                    transform: translate(0,0) rotateZ(0)
+                }
+            }
+            .shaking {
+                &:hover {
+                    animation: shake .1s infinite;
+                }
+            }
+        }
+        
+        .sign_wrap {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-top: 1px solid var(--black);
+
+            div:first-child {
+                border-right: 1px solid var(--black);
+            }
+
+            div {
+                a {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: .4s ease;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        background-color: var(--black);
+                        color: var(--white);
+                    }
+                }
+            }
+        }
+    }
+    
+    // 햄버거 메뉴
+    .burgerMenu {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        .bar1, .bar2, .bar3 {
+            width: 40px;
+            height: 2px;
+            background-color: var(--black);
+            margin: 3px 0;
+            transition: 0.3s ease;
+        }
+
+        &:hover {
+            .bar1 {
+            transform: translateY(-5px);
+            }
+            .bar2 {
+                opacity: 1;
+            }
+            .bar3 {
+            transform: translateY(5px);
+            }
+        }
+    }
+    .open {
+
+        .bar1 {
+            transform: rotate(-180deg) translate(-5px, -8px);
+        }
+        .bar2 {
+        opacity: 0;
+        }
+        .bar3 {
+        transform: rotate(180deg) translate(-5px, 8px);
+        }
+
+        &:hover {
+            .bar1 {
+                transform: rotate(-45deg) translate(-5px, 5px);
+            }
+            .bar2 {
+            opacity: 0;
+            }
+            .bar3 {
+            transform: rotate(45deg) translate(-6px, -6px);
+            }
+        }
+    }
+
+    // 다크모드
+    @keyframes gradient {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: -100% 0;
+        }
+    }
+    .right {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .dark_mode{
+            width: 50%;
+            height: 100%;
+            position: relative;
+            border-right: 1px solid var(--black);
+        }
+        .bgGr {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg,#fff,#000000,#fff);
+            background-size: 200% auto!important;
+            animation: gradient 1.6s cubic-bezier(.455,.03,.515,.955) infinite alternate;
+        }
+
+    }
+    .dark-mode-toggle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        color: #fff;
+        cursor: pointer;
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 80px;
+            height: 34px;
+
+            input {
+                display: none;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                transition: 0.4s;
+                border-radius: 34px;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    height: 26px;
+                    width: 26px;
+                    left: 4px;
+                    bottom: 4px;
+                    background-color: white;
+                    transition: 0.4s;
+                    border-radius: 50%;
+                }
+            }
+
+            input:checked + .slider {
+                background-color: var(--black);
+
+                &:before {
+                    transform: translateX(46px);
+                }
+            }
+        }
+    }
+}
+
+
+// 반응형
+
+@media (max-width: 850px) {
+    #header {
+        .right {
+            .dark_mode{
+                width: 100%;
+                border-right: 0;
+            }
+            .bgGr {
+                display: none;
+            }
+            .dark-mode-toggle {
+                .switch {
+                    width: 60px;
+                }
+                input:checked + .slider {
+                    &:before {
+                        transform: translateX(26px);
+                    }
+                }
+            }
+        }
+        nav {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            border-right: 0;
+    
+            .navMenu {
+                li {
+                    a {
+                        padding: 1.5rem;
+                    }
+                }
+            }
+            .sign_wrap {
+                height: 5.5rem;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 550px) {
+    #header {
+        > ul {
+            > li{
+                a {
+                    img {
+                        width: 85%;
+                    }
+                }
+            }
+            
+        }
+    }
+}
