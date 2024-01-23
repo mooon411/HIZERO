@@ -7,7 +7,7 @@ export default function page() {
     <div className="page_list">
       <ul>
         <li>
-          <Link href="/">
+          <Link href="/blogDetail">
             <Image src={sampleImg} alt="sample" />
             <div className="page_info">
               <h4>title</h4>
@@ -16,7 +16,7 @@ export default function page() {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/blogDetail">
             <Image src={sampleImg} alt="sample" />
             <div className="page_info">
               <h4>title</h4>
@@ -25,7 +25,7 @@ export default function page() {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/blogDetail">
             <Image src={sampleImg} alt="sample" />
             <div className="page_info">
               <h4>title</h4>
@@ -34,7 +34,7 @@ export default function page() {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/blogDetail">
             <Image src={sampleImg} alt="sample" />
             <div className="page_info">
               <h4>title</h4>
@@ -43,7 +43,7 @@ export default function page() {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/blogDetail">
             <Image src={sampleImg} alt="sample" />
             <div className="page_info">
               <h4>title</h4>
@@ -52,7 +52,7 @@ export default function page() {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/blogDetail">
             <Image src={sampleImg} alt="sample" />
             <div className="page_info">
               <h4>title</h4>
